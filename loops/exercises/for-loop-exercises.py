@@ -7,14 +7,14 @@
 
 
 
-# for num in range(21):
-#     print(num)
+for num in range(21):
+     print(num)
 
-# for num in range(3,30,2):
-#     print(num)
+for num in range(3,30,2):
+     print(num)
 
-# for num in range(12,-15,-2):
-#     print(num)
+for num in range(12,-15,-2):
+     print(num)
 
 for num in range(50,19,-1):
     if num%3 == 0:
