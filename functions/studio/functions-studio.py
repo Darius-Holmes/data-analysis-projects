@@ -7,12 +7,37 @@
 # e) Create a variable of type string to test your new function. # f) Use 'print(reverse_characters(my_variable_name))'; to call the function and verify that it correctly reverses the characters in the string.
 # g) Use method chaining to reduce the lines of code within the function.
 
+def reverse_char(string_input):
+    string_list = list(string_input)
+    string_list.reverse()
+    reversed_string = "".join(string_list)
+    return reversed_string
 
+
+print(reverse_char('I love the smell of code in the morning.'))
 
 # 2) The 'split' method does not work on numbers, but we want the function to return a number with all the digits reversed (e.g. 1234 converts to 4321 and NOT the string "4321")
 # a) Add an if statement to your reverse_characters function to check the typeof the parameter.
 # b - d) If type is ‘string’, return the reversed string as before. If type is ‘number’, convert the parameter to a string, reverse the characters, then convert it back into a number. Return the reversed number.
 # e) Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next steps.
+
+def reverse_char(input_value):
+    if type(input_value) == str:
+        string_list = list(input_value)
+        string_list.reverse()
+        reversed_string = "".join(string_list)
+        return reversed_string
+    elif type(input_value) == int:
+        reversed_string = str(input_value)[::-1]
+        return int(reversed_string)
+    elif type(input_value) == float:
+        reversed_string = str(input_value)[::-1]
+        return float(reversed_string)
+    else:
+        return "ERROR"
+    
+print(reverse_char(123456789))
+
 
 # 3) Create a new function with one parameter, which is the list we want to change. The function should:
 # a) Define and initialize an empty list.
@@ -27,3 +52,11 @@
 list_test1 = ['apple', 'potato', 'Capitalized Words']
 list_test2 = [123, 8897, 42, 1168, 8675309]
 list_test3 = ['hello', 'world', 123, 'orange']
+
+def reversed_list(input_list):
+    empty_list = []
+    for i in input_list:
+        reversed_old_list = reverse_char(i)
+        empty_list.append(reversed_old_list)
+        return empty_list
+print(reversed_list(list_test1))
